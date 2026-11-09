@@ -1,0 +1,494 @@
+<?xml version="1.0" ?>
+<mavlinkcamera>
+    <definition version="1">
+        <model>ILX-LR1</model>
+        <vendor>Sony</vendor>
+    </definition>
+    <parameters>
+        <parameter name="TRIG_PULSE" type="uint16" default="100" min="10" max="2000" step="10" unit="ms">
+            <description>Trigger Pulse Width (ms)</description>
+        </parameter>
+        <parameter name="FOCUS_LEAD" type="uint16" default="50" min="0" max="1000" step="10" unit="ms">
+            <description>Focus Lead Time Before Shutter (ms)</description>
+        </parameter>
+        <parameter name="TRIG_POLAR" type="uint8" default="0">
+            <description>Hardware Trigger Polarity</description>
+            <options>
+                <option name="Active Low (GND)" value="0"/>
+                <option name="Active High (3.3V)" value="1"/>
+            </options>
+        </parameter>
+        <parameter name="CAM_MODE" type="uint8" default="0">
+            <description>Camera Operating Mode</description>
+            <options>
+                <option name="Photo Mode" value="0">
+                    <exclusions>
+                        <exclude>CAM_MOV_FMT</exclude>
+                        <exclude>CAM_MOV_FPS</exclude>
+                    </exclusions>
+                </option>
+                <option name="Video Mode" value="1">
+                    <exclusions>
+                        <exclude>CAM_CAP_MODE</exclude>
+                        <exclude>CAM_IMG_FMT</exclude>
+                        <exclude>CAM_RAW_COMP</exclude>
+                        <exclude>CAM_IMG_QUAL</exclude>
+                        <exclude>CAM_IMG_SIZE</exclude>
+                        <exclude>CAM_ASPECT</exclude>
+                    </exclusions>
+                </option>
+            </options>
+        </parameter>
+        <parameter name="CAM_EXP_PROG" type="uint32" default="1">
+            <description>Exposure Program Mode</description>
+            <options>
+                <option name="Manual (M)" value="1"/>
+                <option name="Program Auto (P)" value="65538">
+                    <exclusions>
+                        <exclude>CAM_SHUTTER</exclude>
+                        <exclude>CAM_APER</exclude>
+                    </exclusions>
+                </option>
+                <option name="Aperture Priority (A)" value="131075">
+                    <exclusions>
+                        <exclude>CAM_SHUTTER</exclude>
+                    </exclusions>
+                </option>
+                <option name="Shutter Priority (S)" value="196612">
+                    <exclusions>
+                        <exclude>CAM_APER</exclude>
+                    </exclusions>
+                </option>
+                <option name="Intelligent Auto" value="294912">
+                    <exclusions>
+                        <exclude>CAM_SHUTTER</exclude>
+                        <exclude>CAM_APER</exclude>
+                    </exclusions>
+                </option>
+                <option name="Movie: Program Auto (P)" value="491600">
+                    <exclusions>
+                        <exclude>CAM_SHUTTER</exclude>
+                        <exclude>CAM_APER</exclude>
+                    </exclusions>
+                </option>
+                <option name="Movie: Aperture Priority (A)" value="491601">
+                    <exclusions>
+                        <exclude>CAM_SHUTTER</exclude>
+                    </exclusions>
+                </option>
+                <option name="Movie: Shutter Priority (S)" value="491602">
+                    <exclusions>
+                        <exclude>CAM_APER</exclude>
+                    </exclusions>
+                </option>
+                <option name="Movie: Manual (M)" value="491603"/>
+                <option name="Movie: Flexible Exp. Mode" value="491604"/>
+            </options>
+        </parameter>
+        <parameter name="CAM_SHUTTER" type="uint32" default="66536">
+            <description>Shutter Speed</description>
+            <options>
+                <option name="Bulb" value="0"/>
+                <option name="30&quot;" value="19660810"/>
+                <option name="25&quot;" value="16384010"/>
+                <option name="20&quot;" value="13107210"/>
+                <option name="15&quot;" value="9830410"/>
+                <option name="13&quot;" value="8519690"/>
+                <option name="10&quot;" value="6553610"/>
+                <option name="8&quot;" value="5242890"/>
+                <option name="6&quot;" value="3932170"/>
+                <option name="5&quot;" value="3276810"/>
+                <option name="4&quot;" value="2621450"/>
+                <option name="3.2&quot;" value="2097162"/>
+                <option name="2.5&quot;" value="1638410"/>
+                <option name="2&quot;" value="1310730"/>
+                <option name="1.6&quot;" value="1048586"/>
+                <option name="1.3&quot;" value="851978"/>
+                <option name="1&quot;" value="655370"/>
+                <option name="0.8s" value="524298"/>
+                <option name="0.6s" value="393226"/>
+                <option name="1/2s" value="327690"/>
+                <option name="1/2.5s" value="262154"/>
+                <option name="1/3s" value="65539"/>
+                <option name="1/4s" value="65540"/>
+                <option name="1/5s" value="65541"/>
+                <option name="1/6s" value="65542"/>
+                <option name="1/8s" value="65544"/>
+                <option name="1/10s" value="65546"/>
+                <option name="1/13s" value="65549"/>
+                <option name="1/15s" value="65551"/>
+                <option name="1/20s" value="65556"/>
+                <option name="1/25s" value="65561"/>
+                <option name="1/30s" value="65566"/>
+                <option name="1/40s" value="65576"/>
+                <option name="1/50s" value="65586"/>
+                <option name="1/60s" value="65596"/>
+                <option name="1/80s" value="65616"/>
+                <option name="1/100s" value="65636"/>
+                <option name="1/125s" value="65661"/>
+                <option name="1/160s" value="65696"/>
+                <option name="1/200s" value="65736"/>
+                <option name="1/250s" value="65786"/>
+                <option name="1/320s" value="65856"/>
+                <option name="1/400s" value="65936"/>
+                <option name="1/500s" value="66036"/>
+                <option name="1/640s" value="66176"/>
+                <option name="1/800s" value="66336"/>
+                <option name="1/1000s" value="66536"/>
+                <option name="1/1250s" value="66786"/>
+                <option name="1/1600s" value="67136"/>
+                <option name="1/2000s" value="67536"/>
+                <option name="1/2500s" value="68036"/>
+                <option name="1/3200s" value="68736"/>
+                <option name="1/4000s" value="69536"/>
+                <option name="1/5000s" value="70536"/>
+                <option name="1/6400s" value="71936"/>
+                <option name="1/8000s" value="73536"/>
+                <option name="1/10000s" value="75536"/>
+                <option name="1/12800s" value="78336"/>
+                <option name="1/16000s" value="81536"/>
+                <option name="1/20000s" value="85536"/>
+                <option name="1/25600s" value="91136"/>
+                <option name="1/32000s" value="97536"/>
+            </options>
+        </parameter>
+        <parameter name="CAM_APER" type="uint16" default="280">
+            <description>Aperture (F-Number)</description>
+            <options>
+                <option name="F1.2" value="120"/>
+                <option name="F1.4" value="140"/>
+                <option name="F1.6" value="160"/>
+                <option name="F1.8" value="180"/>
+                <option name="F2.0" value="200"/>
+                <option name="F2.2" value="220"/>
+                <option name="F2.5" value="250"/>
+                <option name="F2.8" value="280"/>
+                <option name="F3.2" value="320"/>
+                <option name="F3.5" value="350"/>
+                <option name="F4.0" value="400"/>
+                <option name="F4.5" value="450"/>
+                <option name="F5.0" value="500"/>
+                <option name="F5.6" value="560"/>
+                <option name="F6.3" value="630"/>
+                <option name="F7.1" value="710"/>
+                <option name="F8.0" value="800"/>
+                <option name="F9.0" value="900"/>
+                <option name="F10" value="1000"/>
+                <option name="F11" value="1100"/>
+                <option name="F13" value="1300"/>
+                <option name="F14" value="1400"/>
+                <option name="F16" value="1600"/>
+                <option name="F18" value="1800"/>
+                <option name="F20" value="2000"/>
+                <option name="F22" value="2200"/>
+            </options>
+        </parameter>
+        <parameter name="CAM_ISO" type="uint32" default="100">
+            <description>ISO Sensitivity</description>
+            <options>
+                <option name="ISO Auto" value="0"/>
+                <option name="ISO 50" value="50"/>
+                <option name="ISO 64" value="64"/>
+                <option name="ISO 80" value="80"/>
+                <option name="ISO 100" value="100"/>
+                <option name="ISO 125" value="125"/>
+                <option name="ISO 160" value="160"/>
+                <option name="ISO 200" value="200"/>
+                <option name="ISO 250" value="250"/>
+                <option name="ISO 320" value="320"/>
+                <option name="ISO 400" value="400"/>
+                <option name="ISO 500" value="500"/>
+                <option name="ISO 640" value="640"/>
+                <option name="ISO 800" value="800"/>
+                <option name="ISO 1000" value="1000"/>
+                <option name="ISO 1250" value="1250"/>
+                <option name="ISO 1600" value="1600"/>
+                <option name="ISO 2000" value="2000"/>
+                <option name="ISO 2500" value="2500"/>
+                <option name="ISO 3200" value="3200"/>
+                <option name="ISO 4000" value="4000"/>
+                <option name="ISO 5000" value="5000"/>
+                <option name="ISO 6400" value="6400"/>
+                <option name="ISO 8000" value="8000"/>
+                <option name="ISO 10000" value="10000"/>
+                <option name="ISO 12800" value="12800"/>
+                <option name="ISO 16000" value="16000"/>
+                <option name="ISO 20000" value="20000"/>
+                <option name="ISO 25600" value="25600"/>
+                <option name="ISO 32000" value="32000"/>
+                <option name="ISO 40000" value="40000"/>
+                <option name="ISO 51200" value="51200"/>
+                <option name="ISO 64000" value="64000"/>
+                <option name="ISO 80000" value="80000"/>
+                <option name="ISO 102400" value="102400"/>
+            </options>
+        </parameter>
+        <parameter name="CAM_EV" type="int16" default="0">
+            <description>Exposure Compensation (EV)</description>
+            <options>
+                <option name="+5.0 EV" value="5000"/>
+                <option name="+4.7 EV" value="4700"/>
+                <option name="+4.3 EV" value="4300"/>
+                <option name="+4.0 EV" value="4000"/>
+                <option name="+3.7 EV" value="3700"/>
+                <option name="+3.3 EV" value="3300"/>
+                <option name="+3.0 EV" value="3000"/>
+                <option name="+2.7 EV" value="2700"/>
+                <option name="+2.3 EV" value="2300"/>
+                <option name="+2.0 EV" value="2000"/>
+                <option name="+1.7 EV" value="1700"/>
+                <option name="+1.3 EV" value="1300"/>
+                <option name="+1.0 EV" value="1000"/>
+                <option name="+0.7 EV" value="700"/>
+                <option name="+0.3 EV" value="300"/>
+                <option name="+0.0 EV" value="0"/>
+                <option name="-0.3 EV" value="-300"/>
+                <option name="-0.7 EV" value="-700"/>
+                <option name="-1.0 EV" value="-1000"/>
+                <option name="-1.3 EV" value="-1300"/>
+                <option name="-1.7 EV" value="-1700"/>
+                <option name="-2.0 EV" value="-2000"/>
+                <option name="-2.3 EV" value="-2300"/>
+                <option name="-2.7 EV" value="-2700"/>
+                <option name="-3.0 EV" value="-3000"/>
+                <option name="-3.3 EV" value="-3300"/>
+                <option name="-3.7 EV" value="-3700"/>
+                <option name="-4.0 EV" value="-4000"/>
+                <option name="-4.3 EV" value="-4300"/>
+                <option name="-4.7 EV" value="-4700"/>
+                <option name="-5.0 EV" value="-5000"/>
+            </options>
+        </parameter>
+        <parameter name="CAM_METER" type="uint16" default="32769">
+            <description>Exposure Metering Mode</description>
+            <options>
+                <option name="Multi-segment" value="32769"/>
+                <option name="Center-weighted" value="32770"/>
+                <option name="Entire Screen Avg." value="32771"/>
+                <option name="Spot (Standard)" value="32772"/>
+                <option name="Spot (Large)" value="32773"/>
+                <option name="Highlight" value="32774"/>
+            </options>
+        </parameter>
+        <parameter name="CAM_WBMODE" type="uint16" default="2">
+            <description>White Balance Mode</description>
+            <options>
+                <option name="Auto (AWB)" value="2">
+                    <exclusions>
+                        <exclude>CAM_WB_KELVIN</exclude>
+                    </exclusions>
+                </option>
+                <option name="Daylight" value="4">
+                    <exclusions>
+                        <exclude>CAM_WB_KELVIN</exclude>
+                    </exclusions>
+                </option>
+                <option name="Shade" value="32785">
+                    <exclusions>
+                        <exclude>CAM_WB_KELVIN</exclude>
+                    </exclusions>
+                </option>
+                <option name="Cloudy" value="32784">
+                    <exclusions>
+                        <exclude>CAM_WB_KELVIN</exclude>
+                    </exclusions>
+                </option>
+                <option name="Incandescent" value="6">
+                    <exclusions>
+                        <exclude>CAM_WB_KELVIN</exclude>
+                    </exclusions>
+                </option>
+                <option name="Fluorescent (Warm White)" value="32769">
+                    <exclusions>
+                        <exclude>CAM_WB_KELVIN</exclude>
+                    </exclusions>
+                </option>
+                <option name="Fluorescent (Cool White)" value="32770">
+                    <exclusions>
+                        <exclude>CAM_WB_KELVIN</exclude>
+                    </exclusions>
+                </option>
+                <option name="Fluorescent (Day White)" value="32771">
+                    <exclusions>
+                        <exclude>CAM_WB_KELVIN</exclude>
+                    </exclusions>
+                </option>
+                <option name="Fluorescent (Daylight)" value="32772">
+                    <exclusions>
+                        <exclude>CAM_WB_KELVIN</exclude>
+                    </exclusions>
+                </option>
+                <option name="Underwater Auto" value="32816">
+                    <exclusions>
+                        <exclude>CAM_WB_KELVIN</exclude>
+                    </exclusions>
+                </option>
+                <option name="Color Temperature (Kelvin)" value="32786"/>
+                <option name="Custom 1" value="32800">
+                    <exclusions>
+                        <exclude>CAM_WB_KELVIN</exclude>
+                    </exclusions>
+                </option>
+                <option name="Custom 2" value="32801">
+                    <exclusions>
+                        <exclude>CAM_WB_KELVIN</exclude>
+                    </exclusions>
+                </option>
+                <option name="Custom 3" value="32802">
+                    <exclusions>
+                        <exclude>CAM_WB_KELVIN</exclude>
+                    </exclusions>
+                </option>
+            </options>
+        </parameter>
+        <parameter name="CAM_WB_KELVIN" type="uint16" default="5500" min="2500" max="9900" step="100" unit="K">
+            <description>White Balance Color Temperature</description>
+        </parameter>
+        <parameter name="CAM_FOCUS_MODE" type="uint16" default="2">
+            <description>Focus Mode</description>
+            <options>
+                <option name="Single-shot AF (AF-S)" value="2"/>
+                <option name="Continuous AF (AF-C)" value="32772"/>
+                <option name="Automatic AF (AF-A)" value="32773"/>
+                <option name="DMF (Direct Manual Focus)" value="32774"/>
+                <option name="Manual Focus (MF)" value="1"/>
+            </options>
+        </parameter>
+        <parameter name="CAM_AF_AREA" type="uint16" default="1">
+            <description>AF Area Mode</description>
+            <options>
+                <option name="Wide" value="1"/>
+                <option name="Zone" value="2"/>
+                <option name="Center Fix" value="3"/>
+                <option name="Spot: Small (S)" value="257"/>
+                <option name="Spot: Medium (M)" value="258"/>
+                <option name="Spot: Large (L)" value="259"/>
+                <option name="Expand Spot" value="260"/>
+                <option name="Tracking: Wide" value="513"/>
+                <option name="Tracking: Zone" value="514"/>
+                <option name="Tracking: Center" value="515"/>
+                <option name="Tracking: Spot (S)" value="516"/>
+                <option name="Tracking: Spot (M)" value="517"/>
+                <option name="Tracking: Spot (L)" value="518"/>
+                <option name="Tracking: Expand Spot" value="519"/>
+            </options>
+        </parameter>
+        <parameter name="CAM_CAP_MODE" type="uint32" default="1">
+            <description>Drive Mode / Still Capture Mode</description>
+            <options>
+                <option name="Single Shooting" value="1"/>
+                <option name="Continuous Shooting (Hi)" value="65538"/>
+                <option name="Continuous Shooting (Hi+)" value="98320"/>
+                <option name="Continuous Shooting (Mid)" value="98325"/>
+                <option name="Continuous Shooting (Lo)" value="98322"/>
+                <option name="Self-timer (2s)" value="229379"/>
+                <option name="Self-timer (10s)" value="229380"/>
+                <option name="Self-timer (5s)" value="229381"/>
+            </options>
+        </parameter>
+        <parameter name="CAM_IMG_FMT" type="uint8" default="1">
+            <description>Still Image File Format</description>
+            <options>
+                <option name="RAW" value="1"/>
+                <option name="RAW + JPEG" value="2"/>
+                <option name="JPEG" value="3"/>
+                <option name="HEIF" value="4"/>
+                <option name="RAW + HEIF" value="5"/>
+            </options>
+        </parameter>
+        <parameter name="CAM_RAW_COMP" type="uint8" default="1">
+            <description>RAW File Compression Type</description>
+            <options>
+                <option name="Uncompressed" value="1"/>
+                <option name="Lossless Compressed" value="3"/>
+                <option name="Compressed" value="2"/>
+            </options>
+        </parameter>
+        <parameter name="CAM_IMG_QUAL" type="uint8" default="2">
+            <description>JPEG / HEIF Quality</description>
+            <options>
+                <option name="Light" value="1"/>
+                <option name="Standard" value="2"/>
+                <option name="Fine" value="3"/>
+                <option name="Extra Fine" value="4"/>
+            </options>
+        </parameter>
+        <parameter name="CAM_IMG_SIZE" type="uint8" default="1">
+            <description>Still Image Resolution Size</description>
+            <options>
+                <option name="Large (61M - 9504x6336)" value="1"/>
+                <option name="Medium (26M - 6240x4160)" value="2"/>
+                <option name="Small (15M - 4752x3168)" value="3"/>
+            </options>
+        </parameter>
+        <parameter name="CAM_ASPECT" type="uint8" default="1">
+            <description>Aspect Ratio</description>
+            <options>
+                <option name="3:2 (Native 35mm)" value="1"/>
+                <option name="16:9" value="2"/>
+                <option name="4:3" value="3"/>
+                <option name="1:1 (Square)" value="4"/>
+            </options>
+        </parameter>
+        <parameter name="CAM_SAVEDEST" type="uint16" default="16">
+            <description>Still Image Save Destination</description>
+            <options>
+                <option name="Camera SD Card Only" value="16"/>
+                <option name="PC / USB Host Only" value="1"/>
+                <option name="Camera SD Card + PC Host" value="17"/>
+            </options>
+        </parameter>
+        <parameter name="CAM_SILENT" type="uint8" default="1">
+            <description>Silent Shooting</description>
+            <options>
+                <option name="Off" value="1"/>
+                <option name="On" value="2"/>
+            </options>
+        </parameter>
+        <parameter name="CAM_APSC_CROP" type="uint8" default="1">
+            <description>APS-C / Super 35mm Sensor Crop</description>
+            <options>
+                <option name="Off (Full-Frame)" value="1"/>
+                <option name="Auto" value="2"/>
+                <option name="On (APS-C 1.5x Crop)" value="3"/>
+            </options>
+        </parameter>
+        <parameter name="CAM_IBIS_STILL" type="uint8" default="3">
+            <description>SteadyShot Image Stabilization</description>
+            <options>
+                <option name="Off" value="1"/>
+                <option name="On" value="2"/>
+                <option name="Auto / Active" value="3"/>
+            </options>
+        </parameter>
+        <parameter name="CAM_SHTR_LAG" type="uint8" default="1">
+            <description>Shutter Release Time Lag</description>
+            <options>
+                <option name="Off (Standard)" value="1"/>
+                <option name="On (Fast / Reduced Latency)" value="2"/>
+                <option name="Auto" value="3"/>
+            </options>
+        </parameter>
+        <parameter name="CAM_MOV_FMT" type="uint8" default="9">
+            <description>Movie File Format</description>
+            <options>
+                <option name="XAVC S 4K" value="9"/>
+                <option name="XAVC S-I 4K (All-Intra)" value="8"/>
+                <option name="XAVC HS 4K (H.265)" value="11"/>
+                <option name="XAVC S HD" value="14"/>
+                <option name="XAVC S-I HD" value="15"/>
+            </options>
+        </parameter>
+        <parameter name="CAM_MOV_FPS" type="uint8" default="3">
+            <description>Movie Record Frame Rate</description>
+            <options>
+                <option name="60p (59.94 fps)" value="1"/>
+                <option name="50p (50.00 fps)" value="2"/>
+                <option name="30p (29.97 fps)" value="3"/>
+                <option name="25p (25.00 fps)" value="4"/>
+                <option name="24p (23.98 fps)" value="5"/>
+                <option name="120p (119.88 fps)" value="7"/>
+            </options>
+        </parameter>
+    </parameters>
+</mavlinkcamera>
